@@ -1,0 +1,26 @@
+.mode-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.mode-section div {
+  display: flex;
+  gap: 16px;
+}
+.logo-name {
+  font-size: 26px;
+  font-weight: 700;
+}
+.mode {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  cursor: pointer;
+}
+.mode-icon {
+  cursor: pointer;
+}
+.mode-change {
+  display: flex;
+  flex-direction: row-reverse;
+}
