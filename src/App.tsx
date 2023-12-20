@@ -24,6 +24,7 @@ function App() {
   const [userInput, setUserInput] = useState("");
   const [url, setUrl] = useState("https://api.github.com/users/");
   const [user, setUser] = useState<User | null>(null);
+  const [result, setResult] = useState(true);
   const handleuserInput = (event: React.ChangeEvent<HTMLInputElement>) => {
     setUserInput(event.target.value);
   };
@@ -38,8 +39,14 @@ function App() {
     const fetchData = async () => {
       try {
         const response = await fetch(url);
+        if (!response.ok) {
+          console.log("can't found");
+          setResult(false);
+          return;
+        }
         const data = await response.json();
         setUser(data);
+        setResult(true);
       } catch (error) {
         console.log(error);
       }
@@ -59,7 +66,9 @@ function App() {
           value={userInput}
           handleInput={handleuserInput}
           fetch={logUser}
+          result={result}
         />
+        {result ? null : <p className="error-below">no result</p>}
         <Content user={user} />
       </div>
     </div>

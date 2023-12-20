@@ -13,6 +13,12 @@
   font-family: "Space Mono", monospace;
   padding: 24px;
 }
+.error-below {
+  color: #f74646;
+  font-size: 15px;
+  font-weight: 700;
+  
+}
 .main-container {
   width: 100%;
   max-width: 730px;
@@ -48,6 +54,12 @@
 }
 .dark-mode input {
   background-color: #1e2a47;
+}
+.light-mode #user{
+  color: #222731;
+}
+.dark-mode #user{
+  color: white
 }
 .light-mode #user::placeholder {
   color: #4b6a9b;
@@ -127,5 +139,8 @@ a {
 @media screen and (min-width: 768px) {
   .App {
     padding: 98px;
+  }
+  .error-below{
+    display: none;
   }
 }

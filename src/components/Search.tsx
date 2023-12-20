@@ -5,6 +5,7 @@ function Search(props: {
   value: string;
   handleInput: (event: React.ChangeEvent<HTMLInputElement>) => void;
   fetch: (event: React.FormEvent<HTMLFormElement>) => void;
+  result: boolean;
 }) {
   return (
     <form action="" className="card input-form" onSubmit={props.fetch}>
@@ -19,10 +20,13 @@ function Search(props: {
           onChange={props.handleInput}
         />
       </div>
-      <div className="search-result">
-        <button className="search-btn" type="submit">
-          Search
-        </button>
+      <div className="search-section-error">
+        {props.result ? null : <p className="result-message">no result</p>}
+        <div className="search-result">
+          <button className="search-btn" type="submit">
+            Search
+          </button>
+        </div>
       </div>
     </form>
   );
